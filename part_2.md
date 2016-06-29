@@ -124,7 +124,7 @@ In our brute force we only save two variables, both of which are integers. These
 </details>
   <br>
 
-**Boyer Moore** ALSO includes a **further** optimization calleg the Galil rule. This trades more time for space and remembers all matches and where they occured, so it never has to check the same letter twice. This results in O(n + m) time complexity, which is remarkably efficient. The implementation of this is beyond the scope of this lesson. 
+**Boyer Moore** ALSO includes a **further** optimization called the Galil rule. This trades more time for space and remembers all matches and where they occured, so it never has to check the same letter twice. This results in O(n + m) time complexity, which is remarkably efficient. The implementation of this is beyond the scope of this lesson. 
 
 ## Closing Thoughts
 - You can optimize an algorithm by eliminating useless or duplicate work, or by trading time for space.
