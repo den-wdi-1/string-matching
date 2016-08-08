@@ -41,7 +41,6 @@ Underneath this lies an algorithm that searches through the text looking for the
 
 How might that work?
 
-
 ### Big O Review
 
 What's Big(O)? 
@@ -51,7 +50,7 @@ Big O is way to judge the efficiency of algorithms. By looking at what happens w
 the magnitude of the operations we can compare different algorithms.
 </details>
 
-What are some common Big(O) values
+What are some common Big(O) values?
 <details>
 - Constant
 - ``ln n``
@@ -75,6 +74,7 @@ What is the best case Big O for Bubble Sort? What's the worst case Big O for bub
 - Best case: ``n``
 - Worst case: ``n^2``
 </details>
+
 
 A practical example comes from not too long ago. In 2000, one of the most popular sorts was quick sort. While quick sort has 
 average case Big O of ``n ln n`` it has a worse case Big O of ``n^2`` when the array is already sorted. Some common sorting 
@@ -123,6 +123,9 @@ If the brute force option is Big O of ``nm`` can we do better? Not really, but o
 basically the same as the worse case. We always check every character.  What can we do to try to make the average case better?
 
 A genuis, 
+
+![](https://github.com/den-wdi-1/string-matching/blob/master/knuth.jpg)
+
 came up with another way to check for the matching pattern. The basic idea is to only check a portion of the document. In 
 order to do this we have to store some additional data about the pattern. This idea evolved over the years between solutions
 that were more complex but efficient and simpler solutions that were slightly less efficient but easier to implement. 
@@ -132,7 +135,7 @@ Here's Horspool's algorithm
 - Build a hash for each letter in the alphabet. The value is either 
 	- the size of the pattern string if the letter is not in the pattern
 	- the number of places to end of the pattern if the letter is in the pattern
-This hash is called the shift table.
+	- This hash is called the shift table.
 - Move the length of the pattern to and look up the value of the letter in the shift table.
 - Until the end of the document move the number of spaces in the shift table unless the value is 0.
 - If the value in the shift table is 0
@@ -200,7 +203,7 @@ everything else would be shift of 10.
 everything else would be shift of 11.
 </details>
 
-Let's look at an example. Let's look for Florida in a state list.
+Let's go through a full example of the algorithm. Let's look for Florida in a state list.
 ```ruby
 	florida_shift = {
 		'a' => 0,
